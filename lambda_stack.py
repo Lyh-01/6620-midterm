@@ -42,7 +42,7 @@ class LambdaStack(Stack):
 
         # S3 事件源触发器
         self.replicator_fn.add_event_source(
-            sources.S3EventSource(self.bucket_src, events=[s3.EventType.OBJECT_CREATED, s3.EventType.OBJECT_REMOVED])
+            sources.S3EventSourceV2(self.bucket_src, events=[s3.EventType.OBJECT_CREATED, s3.EventType.OBJECT_REMOVED])
         )
 
         # Cleaner Lambda 函数
